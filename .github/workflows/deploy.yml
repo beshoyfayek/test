@@ -75,13 +75,13 @@ jobs:
     - name: Deploy to server
       uses: appleboy/scp-action@v0.1.3
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        host: 198.199.85.231
+        username: beshoy
+        password: 1234
         source: "dist/*"
         target: "/var/www/test"
         rm: true
 
     - name: Restart Nginx
       run: |
-        ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "sudo systemctl restart nginx"
+        ssh beshoy@198.199.85.231 "sudo systemctl restart nginx"
