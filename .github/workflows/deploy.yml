@@ -22,7 +22,6 @@ jobs:
     # - name: Restart application
     #   run: pm2 restart all
 
-
 # name: Deploy to DigitalOcean Droplet
 
 # on:
