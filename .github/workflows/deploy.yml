@@ -17,7 +17,7 @@ jobs:
       run: npm install
 
     - name: Build project
-      run: npm run build && sudo cp -r dist /var/www/test
+      run: npm run build && rm -r /var/www/test && sudo cp -r dist /var/www/test
 
 
     # - name: Restart application
