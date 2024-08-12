@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="HI, test app"/>
+  <HelloWorld :msg="apiUrl ? apiUrl : 'Hello World !!'"/>
 </template>
 
 <script>
@@ -10,6 +10,15 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      apiUrl: process?.env?.VUE_APP_API_URL // Access the environment variable here
+    };
+  },
+  mounted() {
+    console.log("API URL:", this.apiUrl);
+    // You can now use this.apiUrl in your component
   }
 }
 </script>
