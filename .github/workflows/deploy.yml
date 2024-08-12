@@ -20,4 +20,4 @@ jobs:
       run: npm run build
 
     - name: Restart application
-      run: cp ~/test/dist /var/www/test -r
+      run: pm2 restart all
