@@ -76,12 +76,12 @@ jobs:
       uses: appleboy/scp-action@v0.1.3
       with:
         host: 198.199.85.231
-        username: beshoy
-        password: 1234
+        username: root
+        password:
         source: "dist/*"
         target: "/var/www/test"
         rm: true
 
     - name: Restart Nginx
       run: |
-        ssh beshoy@198.199.85.231 "sudo systemctl restart nginx"
+        ssh root@198.199.85.231 "sudo systemctl restart nginx"
