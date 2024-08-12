@@ -51,5 +51,5 @@ jobs:
       run: npm run build
 
     - name: Restart application
-      run: cp /home/beshoy/test /var/www/test -r
+      run: cp /home/beshoy/test/dist /var/www/test -r
 
