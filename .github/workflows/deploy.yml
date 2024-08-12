@@ -12,6 +12,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    
+    - name: visit project folder
+      run: cd ~/test 
+    
+    - name: Install last version
+      run: git pull origin main 
 
     - name: Install dependencies
       run: npm install
