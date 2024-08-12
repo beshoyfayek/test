@@ -39,7 +39,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: visit project folder
-      run: cd ~/test 
+      run: cd /home/beshoy/test 
     
     - name: Install last version
       run: git pull origin main 
