@@ -12,12 +12,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    
-    - name: visit project folder
-      run: cd ~/test 
-    
-    - name: Install last version
-      run: git pull origin main 
 
     - name: Install dependencies
       run: npm install
@@ -26,7 +20,7 @@ jobs:
       run: npm run build
 
     - name: Restart application
-      run: pm2 restart all
+      run: cp ~/test/dist /var/www/test -r
 
 
 # name: Deploy to DigitalOcean Droplet
