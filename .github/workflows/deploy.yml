@@ -26,10 +26,10 @@ jobs:
       run: sudo su rm -r /var/www/test
 
     - name: Set new version
-      run: sudo cp -r dist /var/www/test
+      run: sudo su cp -r dist /var/www/test
 
     - name: Reload Nginx
-      run: sudo systemctl reload nginx
+      run: sudo su systemctl reload nginx
 
     # - name: Restart application
     #   run: pm2 restart all
