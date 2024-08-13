@@ -23,7 +23,7 @@ jobs:
     #   run: cp -r /var/www/test ~/test_backup_$(date +'%Y%m%d%H%M%S')
 
     - name: Remove old version
-      run: sudo rm -r /var/www/test
+      run: sudo su rm -r /var/www/test
 
     - name: Set new version
       run: sudo cp -r dist /var/www/test
