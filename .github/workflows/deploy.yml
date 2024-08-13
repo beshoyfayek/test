@@ -20,16 +20,16 @@ jobs:
       run: npm run build
     
     - name: Backup old version
-      run: echo "${{ secrets.PASSWORD }}" | sudo cp -r /var/www/test /var/www/test_backup_$(date +'%Y%m%d%H%M%S')
+      run: cp -r /var/www/test /var/www/test_backup_$(date +'%Y%m%d%H%M%S')
 
     - name: Remove old version
-      run: echo "${{ secrets.PASSWORD }}" | sudo -S rm -r /var/www/test
+      run: sudo -S rm -r /var/www/test
 
     - name: Set new version
-      run: echo "${{ secrets.PASSWORD }}" | sudo cp -r dist /var/www/test
+      run: cp -r dist /var/www/test
 
     - name: Reload Nginx
-      run: echo "${{ secrets.PASSWORD }}" | sudo systemctl reload nginx
+      run: sudo systemctl reload nginx
 
     # - name: Restart application
     #   run: pm2 restart all
